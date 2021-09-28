@@ -1,19 +1,7 @@
-describe("Player", function() {
-  var player;
-  var song;
+describe("Thermostat", function() {
 
-  beforeEach(function() {
-    player = new Player();
-    song = new Song();
+  it("should have a start temperature of 20 degrees", function() {
+    let thermostat = new Thermostat();
+    expect(thermostat.temperature).toEqual(20);
+   })
   });
-
-  it("should be able to play a Song", function() {
-    player.play(song);
-    expect(player.currentlyPlayingSong).toEqual(song);
-
-    //demonstrates use of custom matcher
-    expect(player).toBePlaying(song);
-  });
-  
-});
-
