@@ -41,7 +41,19 @@ describe("Thermostat", function() {
 
    it("should show the energy usage as medium-usage when <=25", function() {
     let thermostat = new Thermostat();
-    expect(thermostat.energyUsage).toEqual("medium-usage");
+    expect(thermostat.energyUsage()).toEqual("medium-usage");
+   })
+
+   it("should show the energy usage as low-usage when <18", function() {
+    let thermostat = new Thermostat();
+    thermostat.decreaseTemp(5)
+    expect(thermostat.energyUsage()).toEqual("low-usage");
+   })
+
+   it("should show the energy usage as high-usage otherwise", function() {
+    let thermostat = new Thermostat();
+    thermostat.increaseTemp(10)
+    expect(thermostat.energyUsage()).toEqual("high-usage");
    })
 
   });

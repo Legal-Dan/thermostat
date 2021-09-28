@@ -6,11 +6,11 @@ class Thermostat {
   }
 
   increaseTemp(increase) {
-    this.temperature += increase
+    this.temperature += increase;
   }
 
   decreaseTemp(decrease) {
-    this.temperature -= decrease
+    this.temperature -= decrease;
   }
 
   powerSaveMode(value) {
@@ -27,8 +27,15 @@ class Thermostat {
   }
 
   energyUsage() {
-    if ( this.temperature <= 25){
-    return "medium-usage"
+    if ( this.temperature < 18){
+      return "low-usage";
     }
+    else if ( this.temperature <= 25){
+      return ("medium-usage");
+    }
+    else {
+      return "high-usage";
+    }
+
   }
 };
