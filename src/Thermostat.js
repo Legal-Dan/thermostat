@@ -1,6 +1,8 @@
 class Thermostat {
-  constructor (temperature) {
+  constructor (temperature, minimumTemp, maximumTemp, powerSave) {
       this.temperature = 20;
+      this.minimumTemp = 10;
+      this.maximumTemp = 25;
   }
 
   increaseTemp(increase) {
@@ -10,4 +12,15 @@ class Thermostat {
   decreaseTemp(decrease) {
     this.temperature -= decrease
   }
+
+  powerSaveMode(value) {
+    if (value) {
+      this.maximumTemp = 25;
+    }
+    else {
+      this.maximumTemp = 32;
+    }
+
+  }
+
 };
