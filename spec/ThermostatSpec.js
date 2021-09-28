@@ -32,5 +32,16 @@ describe("Thermostat", function() {
     thermostat.powerSaveMode(false)
     expect(thermostat.maximumTemp).toEqual(32);
    })
+   it("should reset the temperature to 20 degrees", function() {
+    let thermostat = new Thermostat();
+    thermostat.increaseTemp(5)
+    thermostat.reset()
+    expect(thermostat.temperature).toEqual(20);
+   })
+
+   it("should show the energy usage as medium-usage when <=25", function() {
+    let thermostat = new Thermostat();
+    expect(thermostat.energyUsage).toEqual("medium-usage");
+   })
 
   });

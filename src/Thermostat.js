@@ -20,7 +20,15 @@ class Thermostat {
     else {
       this.maximumTemp = 32;
     }
-
   }
 
+  reset() {
+    this.temperature = 20;
+  }
+
+  energyUsage() {
+    if ( this.temperature <= 25){
+    return "medium-usage"
+    }
+  }
 };
