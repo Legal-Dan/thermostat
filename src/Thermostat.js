@@ -6,11 +6,21 @@ class Thermostat {
   }
 
   increaseTemp(increase) {
-    this.temperature += increase;
+    if (this.temperature + increase <= this.maximumTemp) {
+      this.temperature += increase;
+    }
+    else {
+      this.temperature = this.maximumTemp;
+    }
   }
 
   decreaseTemp(decrease) {
-    this.temperature -= decrease;
+    if (this.temperature - decrease >= this.minimumTemp) {
+      this.temperature -= decrease;
+    }
+    else {
+      this.temperature = this.minimumTemp;
+    }
   }
 
   powerSaveMode(value) {
@@ -31,7 +41,7 @@ class Thermostat {
       return "low-usage";
     }
     else if ( this.temperature <= 25){
-      return ("medium-usage");
+      return "medium-usage";
     }
     else {
       return "high-usage";

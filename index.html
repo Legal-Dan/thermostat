@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thermostat</title>
+  </head>
+  <script src="src/thermostat.js"></script>
+  <script src="./interface.js"></script>
+  <body>
+    <section>
+      <h1>Current temperature in <select id="current-city">
+        <option value="London">London</option>
+        <option value="New york">New York</option>
+        <option value="Paris">Paris</option>
+        <option value="Tokyo">Tokyo</option>
+      </select>
+      <span id="current-temperature"></span></h1>
+    </section>
+    <section>
+      <h1 id="temperature"></h1>
+        <button id="temperature-up">+</button>
+        <button id="temperature-down">-</button>
+        <button id="temperature-reset">reset</button>
+        power saving mode is <span id="power-saving-status">on</span>
+        <button id="powersaving-on">PSM on</button>
+        <button id="powersaving-off">PSM off</button>
+    </section>
+  </body>
+</html>
